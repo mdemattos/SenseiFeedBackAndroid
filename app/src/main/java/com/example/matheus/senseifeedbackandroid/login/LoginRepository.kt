@@ -3,7 +3,6 @@ package com.example.matheus.senseifeedbackandroid.login
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import retrofit2.Call
 
 interface LoginRepository {
 
@@ -18,12 +17,13 @@ interface LoginRepository {
 
         private fun <T, R> request(deferred: Deferred<LoginResponse?>, transform: (T) -> R, default: T): LoginResponse? {
 
-            var response: LoginResponse
+            var response = LoginResponse(0)
 
-            //GlobalScope.launch {
-              //  response = deferred.await() ?: Defau
-            //}
+//            val launch = GlobalScope.launch {
+//                response = deferred.await() ?: LoginResponse(0)
+//            }
 
+            return response
         }
     }
 }
